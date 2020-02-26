@@ -9,7 +9,7 @@
   
   
 
-  <a href="#" class="cta">Add New Card</a>
+  <a href="/newcard" class="cta">Add New Card</a>
   </main>
 </template>
 
