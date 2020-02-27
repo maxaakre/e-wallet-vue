@@ -4,21 +4,26 @@
       <Top msg="Add New Card"/> 
       <p>New Card</p>
     </header>
-    <article class="card blank">
-      <card />
-    </article>
-
+    <Card v-bind:card="card" v-bind:class="card" />
+    <CardForm v-bind:card="card"/>
   </main>
 </template>
 <script>
-import Card from '@/components/Card.vue'
 import Top from '@/components/Top.vue'
+import CardForm from '@/components/CardForm.vue'
+import Card from '@/components/Card.vue'
 export default {
 name: 'Newcard',
 components:{
   Top,
-  Card
-}  
+  CardForm,
+  Card,
+  },
+ data(){
+    return{
+      card: this.$root.$data.cards[0]
+    }
+  } 
 
 
 
@@ -32,14 +37,37 @@ header{
     text-align: center;
     margin: 0;
 }
-.top p {
-    -webkit-box-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-    font-size: .8rem;
-    font-weight: 600;
-    color: rgba(0,0,0,.4);
-    padding: .25rem;
+
+.top h1 {
+    -webkit-box-flex: 2;
+    -ms-flex: 2;
+    flex: 2;
+    line-height: 2rem;
+    font-size: 2rem;
+    padding: 1.5rem 0;
+}
+.blank {
+    background: linear-gradient(237.75deg,hsla(0,0%,100%,.24),hsla(0,0%,100%,0)),#d0d0d0;
+}
+.card{
+    max-width: 24rem;
+    height: 14rem;
+    border-radius: .6rem;
+    background: #eee;
+    padding: 1rem;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-box-shadow: 0 0 0.5rem rgba(0,0,0,.4);
+    box-shadow: 0 0 0.5rem rgba(0,0,0,.4);
+    display: grid;
+    gap: .5rem 0;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 2.8rem;
+    transition: 0.3s;
+    &:hover{
+        transform: scale(1.03)
+    }
+    
 }
 
 </style>

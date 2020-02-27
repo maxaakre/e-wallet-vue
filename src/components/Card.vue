@@ -79,7 +79,7 @@ aside {
     display: flex;
 }
 .card{
- max-width: 24rem;
+    max-width: 24rem;
     height: 14rem;
     border-radius: .6rem;
     background: #eee;
@@ -92,6 +92,10 @@ aside {
     gap: .5rem 0;
     grid-template-columns: 1fr 1fr;
     grid-auto-rows: 2.8rem;
+    transition: 0.3s;
+    &:hover{
+        transform: scale(1.03)
+    }
     
 }
 .card section aside span {
@@ -116,4 +120,6 @@ aside {
     background: linear-gradient(248.3deg,rgba(0,0,0,.16),transparent),#f33355;
     color: #fff;
 }
+
+
 </style>

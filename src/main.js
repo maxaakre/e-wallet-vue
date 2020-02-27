@@ -9,11 +9,20 @@ new Vue({
   data(){return{
     cards: [
       {
+        id: Date.now,
+        cardholder: "",
+        number: "XXXX XXXX XXXX XXXX",
+        valid: "",
+        vendor: "bitcoin",
+        cvv: ""
+      },
+
+      {
         id:1,
         cardholder: "Max Aakre",
         number: "5555 5555 5555 5555",
-        valid: "12/21",
-        vendor: "bitcoin",
+        valid: "12/24",
+        vendor: "evil",
         cvv: "133"
       },
       {
@@ -25,11 +34,11 @@ new Vue({
         cvv: "124"
       },
       {
-        id:3,
+        id: 3,
         cardholder: "Grisen Grison",
         number: "7777 7777 7777 7777",
         valid: "12/21",
-        vendor: "evil",
+        vendor: "bitcoin",
         cvv: "114"
       },
       {
