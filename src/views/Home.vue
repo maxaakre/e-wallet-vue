@@ -5,8 +5,8 @@
       <p class="card-type">active card</p>
     </header>
     <card v-bind:card="card"/>
-  <CardStack v-bind:cards="cards" v-on:changeCard="changeCard"/>
-  <button to="/new-card" class="cta">Add New Card</button>
+  <CardStack v-bind:card="card" v-on:changeCard="changeCard"/>
+  <router-link to="/new-card" class="cta">Add New Card</router-link>
   </main>
 </template>
 
@@ -96,7 +96,7 @@ p {
     margin-inline-start: 0px;
     margin-inline-end: 0px;
 }
- button.cta {
+ button.cta, a {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -119,7 +119,7 @@ p {
     margin: 2rem 0;
     width: 100%;
 }
-button:hover {
+button a:hover {
     color: white;
     cursor: pointer;
     background-color: #000;

@@ -10,7 +10,7 @@
 import Card from '@/components/Card'
     export default {
         props:{
-            cards: Array,
+            card: Object
         },
         components:{
             Card
@@ -19,7 +19,14 @@ import Card from '@/components/Card'
             changeCard(card){
                 this.$emit("changeCard", card)
             }
+            
+        },
+       computed: {
+            cards() {
+                return this.$root.$data.cards;
+            }
         }
+
 
     }
 </script>

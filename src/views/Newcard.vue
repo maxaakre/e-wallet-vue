@@ -25,10 +25,10 @@ components:{
       chip: require("../assets/chip-light.svg"),
       number: "XXXX XXXX XXXX XXXX",
       cardholder: "",
-      month: "",
-      year: "",
+      month: "YY",
+      year: "MM",
       vendor: "bitcoin",
-      color:"#ccc"
+      color: "#ccc"
     }
   }),
  methods: {

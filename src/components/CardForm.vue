@@ -1,7 +1,7 @@
 <template>
         <form class="card-form" @submit.prevent="addCard">
             <label for="number" class="col-2">Card Number</label>
-            <input type="text" name="number" maxlength="18" 
+            <input type="text" name="number" maxlength="16" 
             v-model="card.number"
             placeholder="XXXX-XXXX-XXXX-XXXX" class="col-2">
 
@@ -53,11 +53,11 @@
            card: Object
        },
         methods: {
-    addCard() {
-      this.$root.$emit("new-card", this.card);
-      this.$router.go(-1);
-    }
-  }  
+            addCard() {
+                this.$root.$emit("new-card", this.card);
+                this.$router.go(-1);
+            }
+        }  
     }
 </script>
 
