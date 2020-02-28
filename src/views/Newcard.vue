@@ -4,8 +4,8 @@
       <Top msg="Add New Card"/> 
       <p>New Card</p>
     </header>
-    <Card v-bind:card="card" v-bind:class="card" />
-    <CardForm v-bind:card="card"/>
+    <Card v-bind:card="card" v-bind:class="card"/>
+    <CardForm v-bind:card="card" @select="changeBgVendor"/>
   </main>
 </template>
 <script>
@@ -19,17 +19,39 @@ components:{
   CardForm,
   Card,
   },
- data(){
-    return{
-      card: this.$root.$data.cards[0]
+ data: () => ({
+    card: {
+      id: Date.now(),
+      chip: require("../assets/chip-light.svg"),
+      number: "XXXX XXXX XXXX XXXX",
+      cardholder: "",
+      month: "",
+      year: "",
+      vendor: "bitcoin",
+      color:"#ccc"
     }
-  } 
-
+  }),
+ methods: {
+    changeBgVendor(vendor) {
+      if (vendor === "ninja-bank") {
+        this.card.vendor = require('@/assets/vendor-' + vendor );
+      }
+      if (vendor === "evil-corp") {
+        this.card.vendor = require('@/assets/vendor-' + vendor );
+      }
+      if (vendor === "blockchain-inc") {
+        this.card.vendor = require('@/assets/vendor-' + vendor );
+      }
+      if (vendor === "bitcoin-inc") {
+        this.card.vendor = require('@/assets/vendor-' + vendor );
+      }
+    }
+  }
 
 
 }
 </script>
-<style lang="scss">
+<style lang="scss" >
 header{
   display: block;
 }
@@ -67,7 +89,8 @@ header{
     &:hover{
         transform: scale(1.03)
     }
-    
+ 
+
 }
 
 </style>

@@ -6,15 +6,11 @@
     </header>
     <card v-bind:card="card"/>
   <CardStack v-bind:cards="cards" v-on:changeCard="changeCard"/>
-  
-  
-
-  <a href="/newcard" class="cta">Add New Card</a>
+  <button to="/new-card" class="cta">Add New Card</button>
   </main>
 </template>
 
 <script>
-// @ is an alias to /src
 import Top from '@/components/Top.vue'
 import Card from '@/components/Card.vue'
 import CardStack from '@/components/CardStack.vue'
@@ -29,7 +25,15 @@ export default {
   },
   data(){
     return{
-      card: this.$root.$data.cards[1]
+      card: {
+        cardholder: "Max Aakre",
+        number: "5555 5555 5555 5555",
+        month: "12",
+        year:"21",
+        vendor: "evil",
+        cvv: "133",
+        color:"#ffb649"
+      }
     }
   },
   methods:{
@@ -92,7 +96,7 @@ p {
     margin-inline-start: 0px;
     margin-inline-end: 0px;
 }
-a.cta {
+ button.cta {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -113,8 +117,9 @@ a.cta {
     box-sizing: border-box;
     border-radius: .5rem;
     margin: 2rem 0;
+    width: 100%;
 }
-a:hover {
+button:hover {
     color: white;
     cursor: pointer;
     background-color: #000;

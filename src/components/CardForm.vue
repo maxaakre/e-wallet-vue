@@ -1,15 +1,18 @@
 <template>
-        <section class="card-form">
+        <form class="card-form" @submit.prevent="addCard">
             <label for="number" class="col-2">Card Number</label>
-            <input type="text" name="number" maxlength="16" 
+            <input type="text" name="number" maxlength="18" 
             v-model="card.number"
-            placeholder="XXXX XXXX XXXX XXXX" class="col-2">
+            placeholder="XXXX-XXXX-XXXX-XXXX" class="col-2">
+
             <label for="cardholder" class="col-2">Cardholder Name</label>
             <input type="text" name="cardholder" placeholder="Firstname and Lastname" 
             class="col-2" v-model="card.cardholder">
+
             <label for="month" class="col-1">Month</label>
             <label for="yesr">Year</label>
-            <select name="month" class="col-1" v-model="card.valid">
+
+            <select name="month" class="col-1" v-model="card.month">
                 <option value="01">01</option>
                 <option value="02">02</option>
                 <option value="03">03</option>
@@ -23,7 +26,7 @@
                 <option value="11">11</option>
                 <option value="12">12</option>
             </select>
-            <select name="month" class="col-1" v-model="card.valid">
+            <select name="month" class="col-1" v-model="card.year">
                 <option value="21">21</option>
                 <option value="22">22</option>
                 <option value="23">23</option>
@@ -31,21 +34,30 @@
                 <option value="25">25</option>
             </select>
             <label for="vendor" class="col-2">Vendor</label>
-            <select name="vendor" class="col-2" v-model="card.vendor">
-                <option value="Bitcoin Inc">Bitcoin Inc</option>
-                <option value="Blockchain Inc">Blockchain Inc</option>
-                <option value="Evil Corp">Evil Corp</option>
-                <option value="Ninja Bank">Ninja Bank</option>
+
+            <select name="vendor" class="col-2" 
+                v-model="card.vendor" 
+                @change="$emit('select', card.vendor)">
+                <option value="bitcoin">Bitcoin Inc</option>
+                <option value="blockchain">Blockchain Inc</option>
+                <option value="evil">Evil Corp</option>
+                <option value="ninja">Ninja Bank</option>
             </select>
-        <a href="#" class="cta col-2">Add Card</a>
-        </section>
+        <button class="cta col-2">Add Card</button>
+        </form>
 </template>
 
 <script>
     export default {
        props:{
            card: Object
-       } 
+       },
+        methods: {
+    addCard() {
+      this.$root.$emit("new-card", this.card);
+      this.$router.go(-1);
+    }
+  }  
     }
 </script>
 
@@ -81,5 +93,6 @@ label{
     font-size: 1rem;
     width: 100%;
 }
+
 
 </style>
