@@ -55,12 +55,13 @@ components:{
 header{
   display: block;
 }
-.top h1, .top p {
+.top {
+    h1 , p{
     text-align: center;
     margin: 0;
 }
 
-.top h1 {
+   h1 {
     -webkit-box-flex: 2;
     -ms-flex: 2;
     flex: 2;
@@ -68,29 +69,8 @@ header{
     font-size: 2rem;
     padding: 1.5rem 0;
 }
-.blank {
-    background: linear-gradient(237.75deg,hsla(0,0%,100%,.24),hsla(0,0%,100%,0)),#d0d0d0;
 }
-.card{
-    max-width: 24rem;
-    height: 14rem;
-    border-radius: .6rem;
-    background: #eee;
-    padding: 1rem;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    -webkit-box-shadow: 0 0 0.5rem rgba(0,0,0,.4);
-    box-shadow: 0 0 0.5rem rgba(0,0,0,.4);
-    display: grid;
-    gap: .5rem 0;
-    grid-template-columns: 1fr 1fr;
-    grid-auto-rows: 2.8rem;
-    transition: 0.3s;
-    &:hover{
-        transform: scale(1.03)
-    }
- 
 
-}
+
 
 </style>

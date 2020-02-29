@@ -75,30 +75,23 @@ main{
     -ms-flex-direction: column;
     flex-direction: column;
     text-transform: uppercase;
-}
-.top p {
-    -webkit-box-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
+  p {
+     display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
     font-size: .8rem;
     font-weight: 600;
     color: rgba(0,0,0,.4);
     padding: .25rem;
 }
-.top h1, .top p {
+  h1, p {
     text-align: center;
     margin: 0;
 }
-p {
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
 }
- button.cta, a {
-    display: -webkit-box;
-    display: -ms-flexbox;
+ .cta, button {
     display: flex;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
@@ -118,11 +111,11 @@ p {
     border-radius: .5rem;
     margin: 2rem 0;
     width: 100%;
-}
-button a:hover {
-    color: white;
-    cursor: pointer;
-    background-color: #000;
+    &:hover {
+      color: white;
+      cursor: pointer;
+      background-color: #000;
     
+}
 }
 </style>

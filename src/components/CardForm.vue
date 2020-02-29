@@ -3,7 +3,7 @@
             <label for="number" class="col-2">Card Number</label>
             <input type="text" name="number" maxlength="16" 
             v-model="card.number"
-            placeholder="XXXX-XXXX-XXXX-XXXX" class="col-2">
+            class="col-2">
 
             <label for="cardholder" class="col-2">Cardholder Name</label>
             <input type="text" name="cardholder" placeholder="Firstname and Lastname" 
@@ -57,7 +57,9 @@
                 this.$root.$emit("new-card", this.card);
                 this.$router.go(-1);
             }
-        }  
+        },
+        
+    
     }
 </script>
 
@@ -70,19 +72,13 @@ section{
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0 1rem;
-}
-.card-form label {
+ label {
     padding: .25rem 0;
     font-size: .7rem;
     text-transform: uppercase;
-}
-.col-2{
-    grid-column: auto/span 2;
-}
-label{
     cursor: pointer;
 }
-.card-form input, select {
+ input, select {
     border: 1px solid #000;
     border-radius: .25rem;
     padding: .5rem;
@@ -93,6 +89,11 @@ label{
     font-size: 1rem;
     width: 100%;
 }
+.col-2{
+    grid-column: auto/span 2;
+}
+}
+
 
 
 </style>
