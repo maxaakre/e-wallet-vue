@@ -8,11 +8,11 @@
         >
 
         </header>
-        <section v-if="card.number">{{ splitStr }}</section>
+        <section v-if="card.number" class="number">{{ splitStr }}</section>
         <section class="info"> 
             <aside class="holder">
                 <span>Cardholder Name</span> 
-               <p>{{card.cardholder}}</p></aside>
+               <p maxlength="16">{{card.cardholder}}</p></aside>
             <aside class="valid">
                 <span> Valid Until</span>
                 <p>{{card.month}}/{{card.year}}</p>
@@ -59,7 +59,8 @@ header{
     }
     section.number {
         font-size: 1.6rem;
-        
+        justify-items: center;
+        align-self: center;
         letter-spacing: .05rem;
         padding: .5rem 0 0;
         text-transform: uppercase;
@@ -68,6 +69,10 @@ header{
     section.info aside.holder {
         flex: 1;
         display: block;
+    }
+    p{
+        text-transform: uppercase;
+        font-size: 0.9rem;
     }
     
     

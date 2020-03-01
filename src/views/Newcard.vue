@@ -59,18 +59,15 @@ header{
     text-align: center;
     margin: 0;
 }
-
-   h1 {
-    
+h1 {
     flex: 2;
     line-height: 2rem;
     font-size: 2rem;
     padding: 1.5rem 0;
 }
 }
-section{
-  display: flex;
-}
+
+
 
 
 

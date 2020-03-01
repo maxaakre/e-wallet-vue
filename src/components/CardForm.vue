@@ -7,7 +7,7 @@
 
             <label for="cardholder" class="col-2">Cardholder Name</label>
             <input type="text" name="cardholder" placeholder="Firstname and Lastname" 
-            class="col-2" v-model="card.cardholder">
+            class="col-2 text" v-model="card.cardholder" maxlength="30" >
 
             <label for="month" class="col-1">Month</label>
             <label for="yesr">Year</label>
@@ -84,14 +84,15 @@ section{
     padding: .5rem;
     height: 2.6rem;
     margin: 0 0 .8rem;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     font-size: 1rem;
     width: 100%;
 }
+
 .col-2{
     grid-column: auto/span 2;
 }
+
 }
 
 
