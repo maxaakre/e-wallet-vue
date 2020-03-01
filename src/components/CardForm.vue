@@ -1,7 +1,7 @@
 <template>
         <form class="card-form" @submit.prevent="addCard">
             <label for="number" class="col-2">Card Number</label>
-            <input type="text" name="number" maxlength="16" 
+            <input type="text" name="number" maxlength="16" placeholder="XXXX XXXX XXXX XXXX" 
             v-model="card.number"
             class="col-2">
 

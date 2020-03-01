@@ -11,7 +11,7 @@ new Vue({
       {
         id:1,
         cardholder: "Max Aakre",
-        number: "5555 5555 5555 5555",
+        number: "5555555555555555",
         month: "12",
         year:"21",
         vendor: "evil",
@@ -20,7 +20,7 @@ new Vue({
       {
         id:2,
         cardholder: "Svett Jannebanan",
-        number: "6666 6666 6666 6666",
+        number: "6666666666666666",
         month: "12",
         year:"21",
         vendor: "ninja",
@@ -29,16 +29,17 @@ new Vue({
       {
         id: 3,
         cardholder: "Grisen Grison",
-        number: "7777 7777 7777 7777",
+        number: "7777777777777777",
         month: "12",
         year:"21",
         vendor: "bitcoin",
-        cvv: "114"
+        cvv: "114",
+        color:"#ccc"
       },
       {
         id:4,
         cardholder: "Amanda Viberg",
-        number: "8888 8888 8888 8888",
+        number: "8888888888888888",
         month: "12",
         year:"21",
         vendor: "blockchain",

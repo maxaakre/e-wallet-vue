@@ -3,12 +3,12 @@
         <header class="cardheader">
         <img src="@/assets/chip-dark.svg" alt="chip" class="chip">
         <img 
-            v-bind:src="require('@/assets/vendor-' + card.vendor + '.svg')" 
+            v-bind:src="require('@/assets/vendor-' + card.vendor +  '.svg')" 
             v-bind:class="vendorClass" alt="light"
         >
 
         </header>
-        <section class="number">{{card.number}}</section>
+        <section v-if="card.number">{{ splitStr }}</section>
         <section class="info"> 
             <aside class="holder">
                 <span>Cardholder Name</span> 
@@ -30,7 +30,12 @@
        computed:{
            vendorClass(){
                return this.card.vendor
-           }
+           },
+            splitStr() {
+                let spaceNum = this.card.number;
+                let ccNumSpaces = spaceNum.match(/.{1,4}/g);
+                return ccNumSpaces.join(" ");
+    }
        }
     }
 </script>
@@ -54,20 +59,17 @@ header{
     }
     section.number {
         font-size: 1.6rem;
+        
         letter-spacing: .05rem;
         padding: .5rem 0 0;
         text-transform: uppercase;
     }
-    section.number {
-        font-size: 1.6rem;
-        letter-spacing: .05rem;
-        padding: .5rem 0 0;
-        text-transform: uppercase;
-    }
+    
     section.info aside.holder {
         flex: 1;
         display: block;
     }
+    
     
     
 }
@@ -80,7 +82,7 @@ header{
 }
 .card{
     max-width: 24rem;
-    height: 14rem;
+    height: 15rem;
     border-radius: .6rem;
     background: #eee;
     padding: 1rem;
@@ -88,7 +90,8 @@ header{
     box-shadow: 0 0 0.5rem rgba(0,0,0,.4);
     display: grid;
     gap: .5rem 0;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr;
+    font-size: 1.3rem;
     grid-auto-rows: 2.8rem;
     transition: 0.3s;
     &:hover{
@@ -123,10 +126,7 @@ img{
     background: linear-gradient(248.3deg,rgba(0,0,0,.16),transparent),#f33355;
     color: #222;
 }
-.blank {
-    background: linear-gradient(237.75deg,hsla(0,0%,100%,.24),hsla(0,0%,100%,0));
-    color: #222;
-}
+
 
 
 </style>

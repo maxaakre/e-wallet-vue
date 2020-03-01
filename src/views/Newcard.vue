@@ -22,8 +22,7 @@ components:{
  data: () => ({
     card: {
       id: Date.now(),
-      chip: require("../assets/chip-light.svg"),
-      number: "XXXX XXXX XXXX XXXX",
+      number: "XXXXXXXXXXXXXXXX",
       cardholder: "",
       month: "YY",
       year: "MM",
@@ -43,7 +42,7 @@ components:{
         this.card.vendor = require('@/assets/vendor-' + vendor );
       }
       if (vendor === "bitcoin-inc") {
-        this.card.vendor = require('@/assets/vendor-' + vendor );
+        this.card.vendor = require('@/assets/vendor-' + vendor);
       }
     }
   }
@@ -69,13 +68,8 @@ header{
     padding: 1.5rem 0;
 }
 }
-.card{
-  background-color:#999; 
-  
-.blank {
-    background: linear-gradient(237.75deg,hsla(0,0%,100%,.24),hsla(0,0%,100%,0)#999);
-    color: #222;
-}
+section{
+  display: flex;
 }
 
 

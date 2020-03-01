@@ -27,7 +27,7 @@ export default {
     return{
       card: {
         cardholder: "Max Aakre",
-        number: "5555 5555 5555 5555",
+        number: "5555555555555555",
         month: "12",
         year:"21",
         vendor: "evil",
@@ -43,36 +43,29 @@ export default {
   },
   
   computed:{
-   
     cards(){
       return this.$root.$data.cards
     }
   }
 }
+
 </script>
 <style lang="scss">
 #app{
     font-family: Avenir,Helvetica,Arial,sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
     font-family: PT Mono,monospace;
     padding: 1rem;
     height: 100vh;
     max-width: 24rem;
     margin: 0 auto;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 main{
   display: block;
 }
 .top {
-    display: -webkit-box;
-    display: -ms-flexbox;
+   
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
     flex-direction: column;
     text-transform: uppercase;
   p {
@@ -93,11 +86,7 @@ main{
 }
  .cta, button {
     display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
     height: 4rem;
     font-size: 1.2rem;
@@ -106,7 +95,6 @@ main{
     text-decoration: none;
     color: #000;
     border: .125rem solid #000;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     border-radius: .5rem;
     margin: 2rem 0;
