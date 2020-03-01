@@ -28,7 +28,7 @@ components:{
       month: "YY",
       year: "MM",
       vendor: "bitcoin",
-      color: "#ccc"
+      color: "#999"
     }
   }),
  methods: {
@@ -51,7 +51,7 @@ components:{
 
 }
 </script>
-<style lang="scss" >
+<style lang="scss" scoped >
 header{
   display: block;
 }
@@ -62,14 +62,22 @@ header{
 }
 
    h1 {
-    -webkit-box-flex: 2;
-    -ms-flex: 2;
+    
     flex: 2;
     line-height: 2rem;
     font-size: 2rem;
     padding: 1.5rem 0;
 }
 }
+.card{
+  background-color:#999; 
+  
+.blank {
+    background: linear-gradient(237.75deg,hsla(0,0%,100%,.24),hsla(0,0%,100%,0)#999);
+    color: #222;
+}
+}
+
 
 
 

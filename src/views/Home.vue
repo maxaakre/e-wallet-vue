@@ -32,7 +32,7 @@ export default {
         year:"21",
         vendor: "evil",
         cvv: "133",
-        color:"#ffb649"
+        color:"#ccc"
       }
     }
   },
