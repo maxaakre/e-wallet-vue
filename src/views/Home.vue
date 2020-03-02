@@ -4,8 +4,10 @@
       <Top msg="E-Wallet"/>      
       <p class="card-type">active card</p>
     </header>
-    <card v-bind:card="card"/>
-  <CardStack v-bind:card="card" v-on:changeCard="changeCard"/>
+    <card v-if="card" v-bind:card="card"/>
+    <a class="cta"  @click="show = true " >Delete Card</a>
+    <DeleteCard v-bind:show="show" @delete="removeCard" @close="show = false"/>
+  <CardStack v-bind:card="card" v-on:changeCard="changeCard" />
   <router-link to="/new-card" class="cta">Add New Card</router-link>
   </main>
 </template>
@@ -14,6 +16,7 @@
 import Top from '@/components/Top.vue'
 import Card from '@/components/Card.vue'
 import CardStack from '@/components/CardStack.vue'
+import DeleteCard from '@/components/DeleteCard.vue'
 
 export default {
   name: 'Home',
@@ -21,32 +24,38 @@ export default {
     Top,
     Card,
     CardStack,
+    DeleteCard,
     
   },
   data(){
     return{
-      card: {
-        cardholder: "Max Aakre",
-        number: "5555555555555555",
-        month: "12",
-        year:"21",
-        vendor: "evil",
-        cvv: "133",
-        color:"#ccc"
-      }
+      card: this.$root.$data.cards[0],
+   
+      show: false,
     }
   },
   methods:{
     changeCard(card){
       this.card = card
+    },
+    // showPopup(){
+    //   this.show = true;
+    // },
+    removeCard() {
+      this.$root.$data.cards.splice(this.cardIndex, 1)
+      this.cardIndex -= 1;
+      this.show = false
     }
+    
   },
   
   computed:{
+   
     cards(){
       return this.$root.$data.cards
     }
-  }
+  },
+
 }
 
 </script>
@@ -106,4 +115,17 @@ main{
     
 }
 }
+a{
+
+.remove-item {
+    display: block;
+    cursor: pointer;
+    &:hover {
+      color: black;
+    }
+}
+}
+
+
+
 </style>

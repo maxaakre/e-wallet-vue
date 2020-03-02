@@ -1,9 +1,13 @@
 <template>
+<main>
     <section class="card-stack">
         <card v-for="card in cards" :key="card.id"
         v-bind:card="card"
         v-on:click.native="changeCard(card)"/>
+         
+      
     </section>
+</main>
 </template>
 
 <script>
@@ -18,7 +22,7 @@ import Card from '@/components/Card'
         methods:{
             changeCard(card){
                 this.$emit("changeCard", card)
-            }
+            },
             
         },
        computed: {
@@ -32,6 +36,8 @@ import Card from '@/components/Card'
 </script>
 
 <style lang="scss">
+main{
+
 .card-stack {
     margin: 2rem 0 12rem;
     display: grid;
@@ -40,6 +46,8 @@ import Card from '@/components/Card'
         overflow: hidden;
         transform: scale(1);
     }
+}
+
 }
 
 </style>

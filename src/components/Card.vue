@@ -1,5 +1,6 @@
 <template>
     <article class="card" v-bind:class="vendorClass">
+     
         <header class="cardheader">
         <img src="@/assets/chip-dark.svg" alt="chip" class="chip">
         <img 
@@ -37,7 +38,8 @@
                 let ccNumSpaces = spaceNum.match(/.{1,4}/g);
                 return ccNumSpaces.join(" ");
     }
-       }
+       },
+      
     }
 </script>
 
@@ -131,6 +133,13 @@ img{
 .evil {
     background: linear-gradient(248.3deg,rgba(0,0,0,.16),transparent),#f33355;
     color: #222;
+}
+.remove-item {
+    cursor: pointer;
+    margin-left: 14px;
+    &:hover {
+      color: black;
+    }
 }
 
 
