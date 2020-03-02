@@ -25,18 +25,16 @@ export default {
   },
   data(){
     return{
-      card: this.$root.$data.cards[0]
+      card: {
+        cardholder: "Max Aakre",
+        number: "5555555555555555",
+        month: "12",
+        year:"21",
+        vendor: "evil",
+        cvv: "133",
+        color:"#ccc"
+      }
     }
-    //   card: {
-    //     cardholder: "Max Aakre",
-    //     number: "5555555555555555",
-    //     month: "12",
-    //     year:"21",
-    //     vendor: "evil",
-    //     cvv: "133",
-    //     color:"#ccc"
-    //   }
-    // }
   },
   methods:{
     changeCard(card){

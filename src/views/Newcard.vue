@@ -26,7 +26,7 @@ components:{
       cardholder: "",
       month: "YY",
       year: "MM",
-      vendor: "",
+      vendor: null,
       color: "#999"
     }
   }),
