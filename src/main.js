@@ -17,8 +17,10 @@ new Vue({
       console.log(data)
       console.log('App mounted!');
     })
+    
+  },
+  created(){
     if (localStorage.getItem('cards')) this.cards = JSON.parse(localStorage.getItem('cards'));
-   
   },
   watch: {
     cards: {

@@ -4,10 +4,13 @@
       <Top msg="E-Wallet"/>      
       <p class="card-type">active card</p>
     </header>
-    <card v-if="card" v-bind:card="card"/>
+    <card v-if="card" v-bind:card="card" />
     <a class="cta"  @click="show = true " >Delete Card</a>
-    <DeleteCard v-bind:show="show" @delete="removeCard" @close="show = false"/>
-  <CardStack v-bind:card="card" v-on:changeCard="changeCard" />
+    <DeleteCard v-bind:show="show" 
+    @delete="removeCard" 
+    @close="show = false"/>
+  <CardStack v-bind:card="card" 
+  v-on:changeCard="changeCard" />
   <router-link to="/new-card" class="cta">Add New Card</router-link>
   </main>
 </template>
@@ -34,16 +37,17 @@ export default {
       show: false,
     }
   },
+
+  
   methods:{
     changeCard(card){
       this.card = card
+      // this.card = this.cards.findIndex((card) => card.id == id )
     },
-    // showPopup(){
-    //   this.show = true;
-    // },
-    removeCard() {
-      this.$root.$data.cards.splice(this.cardIndex, 1)
-      this.cardIndex -= 1;
+  
+   
+    removeCard(index) {
+      this.$root.$data.cards.splice(index, 1)
       this.show = false
     }
     

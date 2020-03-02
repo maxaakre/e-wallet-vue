@@ -36,18 +36,17 @@ import Card from '@/components/Card'
 </script>
 
 <style lang="scss">
-main{
+
 
 .card-stack {
     margin: 2rem 0 12rem;
     display: grid;
     grid-auto-rows: 4rem;
+}
     .card{
         overflow: hidden;
         transform: scale(1);
     }
-}
 
-}
 
 </style>
