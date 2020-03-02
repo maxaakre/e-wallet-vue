@@ -3,6 +3,7 @@
         <header class="cardheader">
         <img src="@/assets/chip-dark.svg" alt="chip" class="chip">
         <img 
+            v-if="card.vendor"
             v-bind:src="require('@/assets/vendor-' + card.vendor +  '.svg')" 
             v-bind:class="vendorClass" alt="light"
         >
