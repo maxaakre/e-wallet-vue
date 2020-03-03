@@ -37,7 +37,7 @@
                 let spaceNum = this.card.number;
                 let ccNumSpaces = spaceNum.match(/.{1,4}/g);
                 return ccNumSpaces.join(" ");
-    }
+            }
        },
       
     }

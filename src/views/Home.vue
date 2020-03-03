@@ -5,9 +5,9 @@
       <p class="card-type">active card</p>
     </header>
     <card v-if="card" v-bind:card="card" />
-    <a class="cta"  @click="show = true " >Delete Card</a>
-    <DeleteCard v-bind:show="show" 
-    @delete="removeCard" 
+    <button class="cta"  @click="show = true " >Delete Card</button>
+    <DeleteCard v-bind:show="show"
+    :card="card"
     @close="show = false"/>
   <CardStack v-bind:card="card" 
   v-on:changeCard="changeCard" />
@@ -20,7 +20,6 @@ import Top from '@/components/Top.vue'
 import Card from '@/components/Card.vue'
 import CardStack from '@/components/CardStack.vue'
 import DeleteCard from '@/components/DeleteCard.vue'
-
 export default {
   name: 'Home',
   components: {
@@ -37,20 +36,11 @@ export default {
       show: false,
     }
   },
-
   
   methods:{
     changeCard(card){
       this.card = card
-      // this.card = this.cards.findIndex((card) => card.id == id )
-    },
-  
-   
-    removeCard(index) {
-      this.$root.$data.cards.splice(index, 1)
-      this.show = false
     }
-    
   },
   
   computed:{
@@ -59,9 +49,7 @@ export default {
       return this.$root.$data.cards
     }
   },
-
 }
-
 </script>
 <style lang="scss">
 #app{
@@ -120,7 +108,6 @@ main{
 }
 }
 a{
-
 .remove-item {
     display: block;
     cursor: pointer;
@@ -129,7 +116,4 @@ a{
     }
 }
 }
-
-
-
 </style>

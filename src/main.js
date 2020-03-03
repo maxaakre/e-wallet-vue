@@ -17,6 +17,11 @@ new Vue({
       console.log(data)
       console.log('App mounted!');
     })
+    this.$root.$on("delete", id => {
+      this.cards = JSON.parse(localStorage.getItem("cards"));
+      this.cards = this.cards.filter(card => card.id != id);
+      localStorage.setItem("cards", JSON.stringify(this.cards));
+    });
     
   },
   created(){

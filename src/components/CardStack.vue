@@ -30,14 +30,10 @@ import Card from '@/components/Card'
                 return this.$root.$data.cards;
             }
         }
-
-
     }
 </script>
 
 <style lang="scss">
-
-
 .card-stack {
     margin: 2rem 0 12rem;
     display: grid;
@@ -47,6 +43,4 @@ import Card from '@/components/Card'
         overflow: hidden;
         transform: scale(1);
     }
-
-
 </style>

@@ -2,7 +2,7 @@
     <main>
     <div class="delete-window" v-if="show == true">
         <h1>{{message}}</h1>
-        <button @click="$emit('delete')">Delete Card</button>
+        <button @click="deleteCard">Delete Card</button>
         <button @click="$emit('close')">Close</button>
         
     </div>
@@ -14,13 +14,20 @@
 <script>
     export default {
         props:{
-            show: Boolean
+            show: Boolean,
+            card: Object
         },
         data(){
             return{
                 message: "Are you sure you want to delete"
             }
-        }
+        },
+        methods:{
+            deleteCard(){
+                this.$root.$emit('delete', this.card.id)
+                this.$router.go(0)
+            }  
+        }          
     }
 </script>
 
