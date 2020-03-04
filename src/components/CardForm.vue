@@ -36,8 +36,7 @@
             <label for="vendor" class="col-2">Vendor</label>
 
             <select name="vendor" class="col-2" 
-                v-model="card.vendor" 
-                @change="$emit('select', card.vendor)">
+                v-model="card.vendor" >
                 <option value="bitcoin">Bitcoin Inc</option>
                 <option value="blockchain">Blockchain Inc</option>
                 <option value="evil">Evil Corp</option>

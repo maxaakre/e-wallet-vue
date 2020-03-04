@@ -5,7 +5,7 @@
       <p>New Card</p>
     </header>
     <Card v-bind:card="card" v-bind:class="card"/>
-    <CardForm v-bind:card="card" @select="changeBgVendor"/>
+    <CardForm v-bind:card="card"/>
   </main>
 </template>
 <script>
@@ -29,23 +29,7 @@ components:{
       vendor: null,
       color: "#999"
     }
-  }),
- methods: {
-    changeBgVendor(vendor) {
-      if (vendor === "ninja-bank") {
-        this.card.vendor = require('@/assets/vendor-' + vendor );
-      }
-      if (vendor === "evil-corp") {
-        this.card.vendor = require('@/assets/vendor-' + vendor );
-      }
-      if (vendor === "blockchain-inc") {
-        this.card.vendor = require('@/assets/vendor-' + vendor );
-      }
-      if (vendor === "bitcoin-inc") {
-        this.card.vendor = require('@/assets/vendor-' + vendor);
-      }
-    }
-  }
+  })
 
 
 }
