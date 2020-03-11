@@ -24,8 +24,9 @@
         },
         methods:{
             deleteCard(){
-                this.$root.$emit('delete', this.card.id)
-                this.$router.go(0)
+                this.$store.dispatch('removeThisCard', this.card.id)
+                this.$emit('close')
+                
             }  
         }          
     }

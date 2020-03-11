@@ -31,24 +31,31 @@ export default {
   },
   data(){
     return{
-      card: this.$root.$data.cards[0],
-   
+     
       show: false,
+      activeIndex: 0
     }
   },
   
   methods:{
     changeCard(card){
-      this.card = card
+      this.activeIndex = this.$store.state.cards.indexOf(card)
     }
   },
   
   computed:{
-   
+    card(){
+     return this.$store.state.cards[this.activeIndex]
+    },
     cards(){
-      return this.$root.$data.cards
+      return this.$store.state.cards
     }
   },
+ 
+  
+
+  
+
 }
 </script>
 <style lang="scss">

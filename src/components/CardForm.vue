@@ -53,7 +53,7 @@
        },
         methods: {
             addCard() {
-                this.$root.$emit("new-card", this.card);
+                this.$store.dispatch("addCardList", this.card);
                 this.$router.go(-1);
             }
         },

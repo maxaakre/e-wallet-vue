@@ -3,6 +3,26 @@
     <router-view/>
   </div>
 </template>
+<script>
+export default {
+  mounted() {
+      this.$store.dispatch('mountLocalStorage');
+  },
+  watch: {
+    cards: {
+      handler() {
+        this.$store.dispatch('persistance');
+      },
+      deep: true,
+    },
+  }, 
+  computed:{
+    cards(){
+      return this.$store.state.cards
+    }
+  }
+}
+</script>
 
 <style lang="scss">
 #app {

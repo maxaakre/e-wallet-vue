@@ -27,7 +27,7 @@ import Card from '@/components/Card'
         },
        computed: {
             cards() {
-                return this.$root.$data.cards;
+                return this.$store.state.cards;
             }
         }
     }
