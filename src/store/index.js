@@ -1,46 +1,38 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import Vue from "vue";
+import Vuex from "vuex";
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 export default new Vuex.Store({
-state:{
-cards:[]
-},
-mutations:{
-    addCard(state,card){
-        state.cards.push(card)
+  state: {
+    cards: [],
+  },
+  mutations: {
+    addCard(state, card) {
+      state.cards.push(card);
     },
-    delete(state,id){
-        const index = state.cards.findIndex((card) => card.id == id)
-      this.state.cards.splice(index, 1)
+    delete(state, id) {
+      const index = state.cards.findIndex((card) => card.id == id);
+      this.state.cards.splice(index, 1);
     },
     localStorage(state) {
-        console.log('App mounted!');
-        if (localStorage.getItem('cards')) {
-          state.cards = JSON.parse(localStorage.getItem('cards'));
-        }
+      if (localStorage.getItem("cards")) {
+        state.cards = JSON.parse(localStorage.getItem("cards"));
       }
-
-},
-actions:{
+    },
+  },
+  actions: {
     persistance(context) {
-        console.log('Cards changed!');
-        localStorage.setItem('cards', JSON.stringify(context.state.cards));
-      },
-    addCardList(constext,card){
-        constext.commit('addCard',card)
+      localStorage.setItem("cards", JSON.stringify(context.state.cards));
     },
-    removeThisCard(context,id){
-        context.commit('delete',id)
+    addCardList(constext, card) {
+      constext.commit("addCard", card);
     },
-    mountLocalStorage(context){
-        context.commit('localStorage')
-    }  
-  
-}
-
-
-
-
-})
+    removeThisCard(context, id) {
+      context.commit("delete", id);
+    },
+    mountLocalStorage(context) {
+      context.commit("localStorage");
+    },
+  },
+});
